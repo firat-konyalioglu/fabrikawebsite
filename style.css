@@ -1,0 +1,243 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    background-color: black;
+    color: white;
+}
+
+#bgVideo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transform: translateZ(-1px);
+    will-change: transform;
+}
+
+#logoContainer {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 5s ease-in-out;
+}
+
+#logo {
+    max-width: 400px;
+    height: auto;
+}
+
+#header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(128, 128, 128, 0.5);
+    padding: 10px;
+    box-sizing: border-box;
+    transform: translateY(-100%);
+    overflow: visible;
+    transition: all 0.3s ease-in-out;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 2;
+    transform-origin: top;
+}
+
+#header.active {
+    transform: translateY(0);
+}
+
+#header a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+#headerImage {
+    max-width: 100px;
+    height: auto;
+    margin-right: 20px;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+#header.active #headerImage {
+    opacity: 1;
+}
+
+#menu ul { /* Alt menü stilleri */
+    display: none;
+    position: absolute;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#menu a:hover + .submenu,
+.submenu:hover {
+    display: block;
+}
+
+.submenu li {
+    padding: 10px 20px;
+}
+
+#imageContainer {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    width: 100%;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 1;
+    margin-top: 100vh;
+    height: 650px; /* Resim bloğunun yüksekliğini artırdık */
+    overflow: hidden; /* Taşan içeriği gizle */
+    align-items: center;
+}
+
+.imageBox {
+    width: 23%;
+    overflow: hidden;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+    position: relative;
+}
+
+.imageText {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.4); /* Yarı saydam siyah arka plan */
+    color: white;
+    padding: 5px 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: 35px;
+    border-radius: 10px;
+}
+
+
+.imageBox img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.imageBox:hover,
+.imageBox img:hover {
+    transform: scale(1.1);
+}
+
+#bgImage {
+    position: absolute; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -3;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    filter: blur(5px);
+    background-size: cover;
+    background-position: center; 
+}
+
+#textContainer {
+    background-color: black; 
+    color: white;          
+    text-align: center;    
+    padding: 20px;         
+    width: 80%;           
+    margin: 20px auto;    
+    font-family: 'Montserrat', sans-serif; 
+    font-size: 20px;
+    font-weight: 200;
+}
+
+#contactPageContent {
+    display: flex;          
+    justify-content: center; 
+    align-items: center;    
+    width: 80%;
+    margin: 200px auto;    
+}
+
+#contactForm {
+    width: 45%; /* Form genişliği */
+    margin: 5%ş /* Formu ortala */
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.8); /* Arka plan */
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+#contactForm h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+#contactForm label {
+    display: block;
+    margin-bottom: 5px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+#contactForm input,
+#contactForm textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+#contactForm button {
+    background-color: #4CAF50; /* Yeşil */
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+}
+
+#contactForm button:hover {
+    background-color: #45a049; /* Koyu yeşil */
+}
+
+#contactTextContainer {
+    width: 45%;       /* Metin bloğu genişliği %45 */
+    background-color: rgba(0, 0, 0, 0.8); /* Arka plan */
+    padding: 20px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    text-align: left;
+    font-family: 'Montserrat', sans-serif; /* Yazı tipi Montserrat */
+    font-size: 18px; 
+}
+
+#contactTextContainer h3 {
+    font-family: 'Montserrat', sans-serif; /* Başlık yazı tipi Montserrat */
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+#contactTextContainer p {
+    font-family: 'Montserrat', sans-serif; /* Paragraf yazı tipi Montserrat */
+    font-size: 14px;
+    line-height: 1.6; /* Satır yüksekliği */
+}
